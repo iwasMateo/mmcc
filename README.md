@@ -6,6 +6,7 @@ This is an experiment by myself, since I want to attempt it without knowing much
 ## How do I use this?
 Run this file with sudo:
 $ sudo sh ./Starter.sh
+or run it directly through IntelliJ with gradle
 This line should enable you to use the built in Terminal.
 The current commands Include:
 * Inventory [String subcommand] [int Slotx] [int Sloty] [String itemId] [int amount]
