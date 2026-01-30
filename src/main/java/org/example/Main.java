@@ -1,11 +1,9 @@
 package org.example;
 
 public class Main {
-    static void main() {
+    public static void main(String[] args) {
         IO.println(String.format("Hello and welcome!"));
         Inventory.init();
-        while (true) {
-            Terminal.commandRead();
-        }
+        Terminal.commandRead();
     }
 }

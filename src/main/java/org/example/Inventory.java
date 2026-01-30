@@ -21,7 +21,9 @@ public class Inventory {
         grid[x][y].setItem(record);
         grid [x][y].setAmount(amount);
     }
-    static void getContent(int x, int y) {
-        IO.println(grid[x][y].getItem()+" "+grid[x][y].getAmount());
+    static ItemRecord getContent(int x, int y) {
+        IO.println(grid[x][y].getItem().id()+" "+grid[x][y].getAmount());
+        return grid[x][y].getItem();
     }
+
 }

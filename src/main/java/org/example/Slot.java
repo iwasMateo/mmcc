@@ -7,8 +7,8 @@ public class Slot {
         this.item = item;
         this.amount = amount;
     }
-    public String getItem() {
-        return item.id();
+    public ItemRecord getItem() {
+        return item;
     }
     public int getAmount() {
         return amount;
