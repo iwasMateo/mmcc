@@ -1,4 +1,4 @@
-package org.example;
+package org.mmcc;
 
 public class Slot {
     private ItemRecord item;

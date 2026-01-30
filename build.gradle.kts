@@ -4,10 +4,10 @@ plugins {
 }
 
 application {
-    mainClass.set("org.example.Main")
+    mainClass.set("org.mmcc.Main")
 }
 
-group = "org.example"
+group = "org.mmcc"
 version = "1.0-SNAPSHOT"
 
 repositories {
