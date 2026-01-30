@@ -25,10 +25,14 @@ public class Terminal {
                                 break;
                             }
 
-                            int x = Integer.parseInt(args[0]);
-                            int y = Integer.parseInt(args[1]);
-                            ItemRecord item = Item.getItem(args[2]);
-                            int amount = Integer.parseInt(args[3]);
+                            int x = Integer.parseInt(args[1]);
+                            // IO.println(x);
+                            int y = Integer.parseInt(args[2]);
+                            // IO.println(y);
+                            ItemRecord item = Item.getItem(args[3]);
+                            // IO.println(item.id());
+                            int amount = Integer.parseInt(args[4]);
+                            // IO.println(amount);
 
                             if (
                                     x >= 0 && x < 16 &&
@@ -37,7 +41,7 @@ public class Terminal {
                                             amount > 0 &&
                                             amount <= item.maxStack()
                             ) {
-                                Inventory.changeContent(x, y, args[2], amount);
+                                Inventory.changeContent(x, y, args[3], amount);
                             } else {
                                 IO.println("Incorrect Syntax");
                             }
