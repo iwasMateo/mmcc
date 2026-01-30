@@ -23,3 +23,6 @@ dependencies {
 tasks.test {
     useJUnitPlatform()
 }
+tasks.run {
+    standardInput = System.`in`
+}
