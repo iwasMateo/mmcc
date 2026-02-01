@@ -62,6 +62,7 @@ public class Terminal {
                             int strength = Integer.parseInt(args[3]);
                             int duration = Integer.parseInt(args[4]);
                             entity.addEffect(effect, strength, duration);
+                            break;
                         case "clear":
                             if (args.length != 3) {
                                 IO.println("Incorrect Syntax");
@@ -76,6 +77,14 @@ public class Terminal {
                                 IO.println("Effect doesn't exist");
                                 break;
                         }
+                        case "get":
+                            if (args.length != 2) {
+                                IO.println("Incorrect Syntax");
+                                break;
+                            }
+                            Entity entity2 = EntityManager.getInstance().get(args[1]);
+                            IO.println(entity2.getEffects());
+                            break;
                     }
 
             }

@@ -15,7 +15,7 @@ public class EntityManager {
     }
 
     public void add(Entity entity) {
-        entities.put(entity.getId(), entity);
+        entities.put(entity.getEntityId(), entity);
     }
 
     public Entity get(String id) {
