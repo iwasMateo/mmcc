@@ -50,6 +50,33 @@ public class Terminal {
                             Inventory.getContent(Integer.parseInt(args[1]), Integer.parseInt(args[2]));
                             break;
                     }
+                case "Effect":
+                    switch (args[0]) {
+                        case "add":
+                            if(args.length != 5) {
+                                IO.println("Incorrect Syntax");
+                                break;
+                            }
+                            Entity entity= EntityManager.getInstance().get(args[1]);
+                            EffectType effect = Effect.getEffect(args[2]);
+                            int strength = Integer.parseInt(args[3]);
+                            int duration = Integer.parseInt(args[4]);
+                            entity.addEffect(effect, strength, duration);
+                        case "clear":
+                            if (args.length != 3) {
+                                IO.println("Incorrect Syntax");
+                                break;
+                            }
+                            Entity entity1 = EntityManager.getInstance().get(args[1]);
+                            String EffectId = args[2];
+                            EffectType effectType = Effect.getEffect(EffectId);
+                            if (effectType != null) {
+                                entity1.clearEffect(effectType);
+                            } else {
+                                IO.println("Effect doesn't exist");
+                                break;
+                        }
+                    }
 
             }
         }

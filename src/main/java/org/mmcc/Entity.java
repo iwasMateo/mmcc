@@ -7,4 +7,5 @@ public interface Entity {
     void addEffect(EffectType effect, int strength, int duration);
     void clearEffect(EffectType effect);
     Vector3 getDimensions();
+    String getEntityId();
 }
