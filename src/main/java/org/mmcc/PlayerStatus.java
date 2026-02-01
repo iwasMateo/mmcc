@@ -1,4 +1,5 @@
 package org.mmcc;
+import org.mmcc.EntityManager;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,7 +12,9 @@ public class PlayerStatus implements Entity{
     public int experience;
     public List<EffectBehavior> effects;
     public Vector3 size = new Vector3(0.8f, 1.8f, 0.8f);
-        public void init () {
+    public String id = "player";
+
+    public void init () {
         currentHealth = maxHealth;
         dirSpeed = new Vector3(0, 0, 0);
         hunger = 20.0f;
@@ -19,6 +22,7 @@ public class PlayerStatus implements Entity{
         experience = 0;
         effects = new ArrayList<>();
         IO.println("Initialised Player stats");
+        EntityManager.getInstance().add(this);
     }
 
     @Override
@@ -54,6 +58,12 @@ public class PlayerStatus implements Entity{
         return size;
     }
 
+    @Override
+    public String getEntityId() {
+        return "player";
+    }
+
+    @Override
     public void damage(float amount) {
         currentHealth -= amount;
     }
