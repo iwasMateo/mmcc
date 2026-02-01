@@ -1,5 +1,4 @@
 package org.mmcc;
-import org.mmcc.EntityManager;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -68,11 +67,7 @@ public class PlayerStatus implements Entity{
         currentHealth -= amount;
     }
     @Override
-    public List<List<String>> getEffects() {
-        List<List<String>> templist;
-        for (EffectBehavior i : effects) {
-            List<String> temptemplist;
-            effects.get();
-        }
+    public List<EffectBehavior> getEffects() {
+        return effects;
     }
 }

@@ -8,7 +8,7 @@ public interface Entity {
     float setHealth(float health);
     void addEffect(EffectType effect, int strength, int duration);
     void clearEffect(EffectType effect);
-    List<List<String>> getEffects();
+    List<EffectBehavior> getEffects();
     Vector3 getDimensions();
     String getEntityId();
 }

@@ -1,6 +1,7 @@
 package org.mmcc;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 public class Terminal {
@@ -50,6 +51,7 @@ public class Terminal {
                             Inventory.getContent(Integer.parseInt(args[1]), Integer.parseInt(args[2]));
                             break;
                     }
+                    break;
                 case "Effect":
                     switch (args[0]) {
                         case "add":
@@ -66,7 +68,7 @@ public class Terminal {
                         case "clear":
                             if (args.length != 3) {
                                 IO.println("Incorrect Syntax");
-                                break;
+                                continue;
                             }
                             Entity entity1 = EntityManager.getInstance().get(args[1]);
                             String EffectId = args[2];
@@ -80,12 +82,19 @@ public class Terminal {
                         case "get":
                             if (args.length != 2) {
                                 IO.println("Incorrect Syntax");
-                                break;
+                                continue;
                             }
                             Entity entity2 = EntityManager.getInstance().get(args[1]);
-                            IO.println(entity2.getEffects());
+                            List<EffectBehavior> entityEffects =  entity2.getEffects();
+                            for (EffectBehavior i : entityEffects) {
+                                String tempEffect = i.effect().id();
+                                int tempStrength = i.strength();
+                                int tempDuration = i.duration();
+                                IO.println(String.format("%s %x %x", tempEffect, tempStrength, tempDuration));
+                            }
                             break;
                     }
+                    break;
 
             }
         }
