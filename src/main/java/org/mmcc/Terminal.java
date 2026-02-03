@@ -60,7 +60,7 @@ public class Terminal {
                                 break;
                             }
                             Entity entity= EntityManager.getInstance().get(args[1]);
-                            EffectType effect = Effect.getEffect(args[2]);
+                            String effect = args[2];
                             int strength = Integer.parseInt(args[3]);
                             int duration = Integer.parseInt(args[4]);
                             entity.addEffect(effect, strength, duration);
@@ -84,14 +84,23 @@ public class Terminal {
                                 IO.println("Incorrect Syntax");
                                 continue;
                             }
+                            IO.println("Entered get");
                             Entity entity2 = EntityManager.getInstance().get(args[1]);
+                            IO.println(entity2.getEntityId());
                             List<EffectBehavior> entityEffects =  entity2.getEffects();
+                            IO.println(entityEffects.get(0));
                             for (EffectBehavior i : entityEffects) {
-                                String tempEffect = i.effect().id();
-                                int tempStrength = i.strength();
-                                int tempDuration = i.duration();
-                                IO.println(String.format("%s %x %x", tempEffect, tempStrength, tempDuration));
+                                IO.println("Terminal for was accessed");
+                                if (i.effect().id() != null) {
+                                    String tempEffect = i.effect().id();
+                                    int tempStrength = i.strength();
+                                    int tempDuration = i.duration();
+                                    IO.println(String.format("%s %x %x", tempEffect, tempStrength, tempDuration));
+                                } else {
+                                    IO.println("effectid was null");
+                                }
                             }
+
                             break;
                     }
                     break;

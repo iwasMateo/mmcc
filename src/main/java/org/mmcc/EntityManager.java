@@ -16,9 +16,11 @@ public class EntityManager {
 
     public void add(Entity entity) {
         entities.put(entity.getEntityId(), entity);
+        IO.println("Added entity");
     }
 
     public Entity get(String id) {
+        IO.println("got Entity");
         return entities.get(id);
     }
 }

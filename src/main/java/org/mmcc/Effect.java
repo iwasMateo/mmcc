@@ -14,12 +14,6 @@ public class Effect {
             return null;
         }
     }
-    public void add(Entity entity, EffectType effect, int strength, int duration) {
-        entity.addEffect(effect, strength, duration);
-    }
-    public void clear (Entity entity, EffectType effectType) {
-        entity.clearEffect(effectType);
-    }
     public static final EffectType poison = new EffectType(
             "poison",
             "Poison"
