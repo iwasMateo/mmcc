@@ -6,7 +6,7 @@ public interface Entity {
     void damage(float currentHealth);
     float getHealth();
     float setHealth(float health);
-    void addEffect(String effectid, int strength, int duration);
+    void modEffect(String effectid, int strength, int duration);
     void clearEffect(EffectType effect);
     List<FullEffect> getEffects();
     Vector3 getDimensions();

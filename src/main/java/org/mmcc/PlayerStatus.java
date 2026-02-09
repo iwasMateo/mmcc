@@ -37,7 +37,12 @@ public class PlayerStatus implements Entity{
     }
 
     @Override
-    public void addEffect(String effectid, int strength, int duration) {
+    public void modEffect(String effectid, int strength, int duration) {
+        for (FullEffect e : effects) {
+            if (e.effect().id().equals(effectid)) {
+                effects.remove(e);
+            }
+        }
         EffectType effect = Effect.getEffect(effectid);
         effects.add(new FullEffect(effect, strength, duration));
         //IO.println("added effect");

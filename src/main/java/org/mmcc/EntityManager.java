@@ -1,4 +1,5 @@
 package org.mmcc;
+import java.util.Collection;
 import java.util.Map;
 import java.util.HashMap;
 
@@ -12,6 +13,9 @@ public class EntityManager {
 
     public static EntityManager getInstance() {
         return instance;
+    }
+    public  Collection<Entity> getEntities() {
+        return entities.values();
     }
 
     public void add(Entity entity) {

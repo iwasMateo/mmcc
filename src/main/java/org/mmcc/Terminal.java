@@ -63,7 +63,7 @@ public class Terminal {
                             String effect = args[2];
                             int strength = Integer.parseInt(args[3]);
                             int duration = Integer.parseInt(args[4]);
-                            entity.addEffect(effect, strength, duration);
+                            entity.modEffect(effect, strength, duration);
                             break;
                         case "clear":
                             if (args.length != 3) {
