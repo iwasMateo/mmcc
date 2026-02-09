@@ -1,6 +1,6 @@
 package org.mmcc;
 
-public record EffectBehavior(
+public record FullEffect(
         EffectType effect,
         int strength,
         int duration

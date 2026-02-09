@@ -9,7 +9,7 @@ public class PlayerStatus implements Entity{
     public float hunger;
     public Vector3 viewDir;
     public int experience;
-    public List<EffectBehavior> effects;
+    public List<FullEffect> effects;
     public Vector3 size = new Vector3(0.8f, 1.8f, 0.8f);
     public String id = "player";
 
@@ -39,14 +39,14 @@ public class PlayerStatus implements Entity{
     @Override
     public void addEffect(String effectid, int strength, int duration) {
         EffectType effect = Effect.getEffect(effectid);
-        effects.add(new EffectBehavior(effect, strength, duration));
+        effects.add(new FullEffect(effect, strength, duration));
         //IO.println("added effect");
     }
 
     @Override
     public void clearEffect(EffectType effect) {
-        EffectBehavior found = null;
-        for (EffectBehavior e : effects) {
+        FullEffect found = null;
+        for (FullEffect e : effects) {
             if (e.effect().id().equals(effect.id())) {
                 found = e;
                 break;
@@ -72,7 +72,7 @@ public class PlayerStatus implements Entity{
         currentHealth -= amount;
     }
     @Override
-    public List<EffectBehavior> getEffects() {
+    public List<FullEffect> getEffects() {
         return effects;
     }
 }

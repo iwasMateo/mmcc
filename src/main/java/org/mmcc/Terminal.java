@@ -87,9 +87,9 @@ public class Terminal {
                             //IO.println("Entered get");
                             Entity entity2 = EntityManager.getInstance().get(args[1]);
                             IO.println(entity2.getEntityId());
-                            List<EffectBehavior> entityEffects =  entity2.getEffects();
+                            List<FullEffect> entityEffects =  entity2.getEffects();
                             IO.println(entityEffects.get(0));
-                            for (EffectBehavior i : entityEffects) {
+                            for (FullEffect i : entityEffects) {
                                 //IO.println("Terminal for was accessed");
                                 if (i.effect().id() != null) {
                                     String tempEffect = i.effect().id();
