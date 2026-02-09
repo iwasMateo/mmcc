@@ -32,7 +32,7 @@ public class PlayerStatus implements Entity{
     @Override
     public float setHealth(float health) {
         currentHealth-=health;
-        IO.println("set Health");
+        //IO.println("set Health");
         return currentHealth;
     }
 
@@ -40,7 +40,7 @@ public class PlayerStatus implements Entity{
     public void addEffect(String effectid, int strength, int duration) {
         EffectType effect = Effect.getEffect(effectid);
         effects.add(new EffectBehavior(effect, strength, duration));
-        IO.println("added effect");
+        //IO.println("added effect");
     }
 
     @Override
@@ -53,7 +53,7 @@ public class PlayerStatus implements Entity{
             }
         }
         effects.remove(found);
-        IO.println("removed effects");
+        //IO.println("removed effects");
     }
 
     @Override
@@ -63,7 +63,7 @@ public class PlayerStatus implements Entity{
 
     @Override
     public String getEntityId() {
-        IO.println("got Entity id");
+        //IO.println("got Entity id");
         return id;
     }
 

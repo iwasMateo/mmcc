@@ -6,9 +6,9 @@ import java.lang.reflect.Modifier;
 public class Effect {
     public static EffectType getEffect(String id) {
         try {
-            Field field = Item.class.getDeclaredField(id);
+            Field field = Effect.class.getDeclaredField(id);
             if(!Modifier.isStatic(field.getModifiers())) return null;
-            if (!ItemRecord.class.isAssignableFrom(field.getType())) return null;
+            if (!EffectType.class.isAssignableFrom(field.getType())) return null;
             return (EffectType) field.get(null); // static → null
         } catch (NoSuchFieldException | IllegalAccessException e) {
             return null;

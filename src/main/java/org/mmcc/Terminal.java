@@ -84,13 +84,13 @@ public class Terminal {
                                 IO.println("Incorrect Syntax");
                                 continue;
                             }
-                            IO.println("Entered get");
+                            //IO.println("Entered get");
                             Entity entity2 = EntityManager.getInstance().get(args[1]);
                             IO.println(entity2.getEntityId());
                             List<EffectBehavior> entityEffects =  entity2.getEffects();
                             IO.println(entityEffects.get(0));
                             for (EffectBehavior i : entityEffects) {
-                                IO.println("Terminal for was accessed");
+                                //IO.println("Terminal for was accessed");
                                 if (i.effect().id() != null) {
                                     String tempEffect = i.effect().id();
                                     int tempStrength = i.strength();
