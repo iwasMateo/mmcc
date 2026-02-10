@@ -25,5 +25,7 @@ public class Inventory {
         IO.println(grid[x][y].getItem().id()+" "+grid[x][y].getAmount());
         return grid[x][y].getItem();
     }
-
+    static Slot getSlot(int x, int y) {
+      return grid[x][y];
+    }
 }
