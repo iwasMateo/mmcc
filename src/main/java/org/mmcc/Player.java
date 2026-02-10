@@ -1,9 +1,8 @@
 package org.mmcc;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Player implements Entity, StandardPlayer{
+public class Player implements Entity{
     public float maxHealth = 20;
     public float currentHealth;
     public Vector3 dirSpeed;
@@ -13,7 +12,6 @@ public class Player implements Entity, StandardPlayer{
     public List<FullEffect> effects;
     public Vector3 size = new Vector3(0.8f, 1.8f, 0.8f);
     public String id = "player";
-    public int selectslot = 0;
 
     public void init () {
         currentHealth = maxHealth;
@@ -81,37 +79,5 @@ public class Player implements Entity, StandardPlayer{
     @Override
     public List<FullEffect> getEffects() {
         return effects;
-    }
-
-    @Override
-    public Slot getHand() {
-        return null;
-    }
-
-    @Override
-    public List<Slot> getHotbar() {
-        ArrayList<Slot> hotbar = null;
-        for (int i = 0; i<16; i++) {
-            hotbar.add(Inventory.getSlot(i, 0));
-        }
-        return hotbar;
-    }
-
-    @Override
-    public void useHand() {
-        if (Inventory.getContent(selectslot, 0).edible()) {
-            eatHand();
-        }
-    }
-
-    @Override
-    public void eatHand() {
-        int handamount = Inventory.getSlot(selectslot, 0).getAmount();
-        if (handamount > 1) {
-            Inventory.getSlot(selectslot, 0).setAmount(handamount-1);
-        } else {
-            Inventory.getSlot(selectslot, 0).setItem(Item.empty);
-            Inventory.getSlot(selectslot,0).setAmount(0);
-        }
     }
 }
