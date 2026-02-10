@@ -2,7 +2,7 @@ package org.mmcc;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PlayerStatus implements Entity{
+public class Player implements Entity{
     public float maxHealth = 20;
     public float currentHealth;
     public Vector3 dirSpeed;
