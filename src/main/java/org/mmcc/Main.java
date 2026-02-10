@@ -4,7 +4,7 @@ public class Main {
     static void main(String[] args) {
         IO.println(String.format("Hello and welcome!"));
         Inventory.init();
-        Player player = new Player();
+        PlayerStatus player = new PlayerStatus();
         player.init();
         Terminal.commandRead();
     }
