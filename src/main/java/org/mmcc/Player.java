@@ -3,11 +3,7 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
-<<<<<<< HEAD
 public class Player implements Entity, StandardPlayer{
-=======
-public class Player implements Entity{
->>>>>>> 16f9350 (Rename to player)
     public float maxHealth = 20;
     public float currentHealth;
     public Vector3 dirSpeed;
