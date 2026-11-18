@@ -13,9 +13,9 @@ public class Slot {
     public int getAmount() {
         return amount;
     }
-    public String setItem(ItemRecord item){
+    public void setItem(ItemRecord item){
         this.item = item;
-        return "";
+        return;
     }
     public int setAmount(int amount) {
         this.amount = amount;
